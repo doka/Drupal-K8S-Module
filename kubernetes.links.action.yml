@@ -1,0 +1,23 @@
+# All action links for this module
+
+kubernetes.k8sobject_add:
+  # Which route will be called by the link
+  title: 'New K8S Object'
+  description: 'Add a new k8sobject entity with YAML file.'
+  route_name: kubernetes.k8sobject_add
+
+  # Where will the link appear, defined by route name.
+  appears_on:
+    - entity.kubernetes_k8sobject.collection
+    # - entity.kubernetes_k8sobject.canonical
+
+
+kubernetes.k8sobject_run:
+  # Which route will be called by the link
+  title: 'Run this K8s Object'
+  description: 'Run the object on a K8S cluster!'
+  route_name: kubernetes.k8sobject_add
+
+  # Where will the link appear, defined by route name.
+  appears_on:
+    - entity.kubernetes_k8sobject.canonical

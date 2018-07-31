@@ -1,0 +1,12 @@
+# Define the menu links for this module
+
+entity.kubernetes_k8sobject.collection:
+  title: 'List of K8S objects'
+  description: 'List all existing k8sobjects entities'
+  route_name: entity.kubernetes_k8sobject.collection
+  weight: 10
+kubernetes_k8sobject.admin.structure.settings:
+  title: 'Settings of K8S objects'
+  description: 'Configure k8sobject entity'
+  route_name:  kubernetes.k8sobject_settings
+  parent: system.admin_structure

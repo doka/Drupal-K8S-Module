@@ -1,0 +1,22 @@
+# Define the 'local' links for the module
+
+k8sobject.settings_tab:
+  route_name: kubernetes.k8sobject_settings
+  title: Settings
+  base_route: kubernetes.k8sobject_settings
+
+k8sobject.view:
+  route_name: entity.kubernetes_k8sobject.canonical
+  base_route: entity.kubernetes_k8sobject.canonical
+  title: View
+
+k8sobject.page_edit:
+  route_name: entity.kubernetes_k8sobject.edit_form
+  base_route: entity.kubernetes_k8sobject.canonical
+  title: Edit
+
+k8sobject.delete_confirm:
+  route_name:  entity.kubernetes_k8sobject.delete_form
+  base_route:  entity.kubernetes_k8sobject.canonical
+  title: Delete
+  weight: 10

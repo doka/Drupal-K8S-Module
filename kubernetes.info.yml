@@ -1,0 +1,6 @@
+name: Kubernetes Cluster Object Manager
+type: module
+description: Managing PODs and services on a Kubernetes cluster.
+package: Kubernetes
+core: 8.x
+dependencies:

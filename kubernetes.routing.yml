@@ -1,0 +1,67 @@
+# This file brings everything together. Very nifty!
+
+# Route name can be used in several places; e.g. links, redirects, and local
+# actions.
+entity.kubernetes_k8sobject.canonical:
+  path: '/kubernetes_k8sobject/{kubernetes_k8sobject}'
+  defaults:
+    # Calls the view controller, defined in the annotation of the k8sobject
+    # entity. This marks this route as belonging to this entity type.
+    _entity_view: 'kubernetes_k8sobject'
+    _title: 'K8S object content'
+  requirements:
+    # Calls the access controller of the entity, passing in the suffix ('view')
+    # as the $operation parameter to checkAccess().
+    _entity_access: 'kubernetes_k8sobject.view'
+
+entity.kubernetes_k8sobject.collection:
+  path: '/kubernetes_k8sobject/list'
+  defaults:
+  # Calls the list controller, defined in the annotation of the k8sobject entity.
+    _entity_list: 'kubernetes_k8sobject'
+    _title: 'K8S object list'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'view k8sobject entity'
+
+kubernetes.k8sobject_add:
+  path: '/kubernetes_k8sobject/add'
+  defaults:
+    # Calls the form.add controller, defined in the k8sobject entity.
+    _entity_form: kubernetes_k8sobject.default
+    _title: 'Add a K8S object'
+  requirements:
+    # Use the entity's access controller. _entity_create_access tells the router
+    # to use the access controller's checkCreateAccess() method instead of
+    # checkAccess().
+    _entity_create_access: 'kubernetes_k8sobject'
+
+entity.kubernetes_k8sobject.edit_form:
+  path: '/kubernetes_k8sobject/{kubernetes_k8sobject}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the k8sobject entity.
+    _entity_form: kubernetes_k8sobject.default
+    _title: 'Edit K8S object'
+  requirements:
+    # Calls the access controller of the entity, passing in the suffix
+    # ('update') as the $operation parameter to checkAccess().
+    _entity_access: 'kubernetes_k8sobject.update'
+
+entity.kubernetes_k8sobject.delete_form:
+  path: '/k8sobject/{kubernetes_k8sobject}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the k8sobject entity.
+    _entity_form: kubernetes_k8sobject.delete
+    _title: 'Delete K8S object'
+  requirements:
+    # Calls the access controller of the entity, passing in the suffix
+    # ('delete') as the $operation parameter to checkAccess().
+    _entity_access: 'kubernetes_k8sobject.delete'
+
+kubernetes.k8sobject_settings:
+  path: '/admin/structure/kubernetes_k8sobject_settings'
+  defaults:
+    _form: '\Drupal\kubernetes\Form\k8sobjectSettingsForm'
+    _title: 'K8S object settings'
+  requirements:
+    _permission: 'administer k8sobject entity'

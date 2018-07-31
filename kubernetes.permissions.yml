@@ -1,0 +1,10 @@
+'delete k8sobject entity':
+  title: Delete entity content.
+'add k8sobject entity':
+  title: Add entity content
+'view k8sobject entity':
+  title: View entity content
+'edit k8sobject entity':
+  title: Edit entity content
+'administer k8sobject entity':
+  title: Administer settings

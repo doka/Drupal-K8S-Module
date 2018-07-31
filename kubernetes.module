@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains Drupal\kubernetes\kubernetes.module.
+ */
+
+/**
+ * @defgroup kubernetes: Content Entity
+ * @ingroup kubernetes
+ * @{
+ * Implement a content entity.
+ *
+ * This module implements a content entity for K8S objects.
+ *
+ * These entities are called k8sobject, and are known
+ * internally by the machine name kubernetes_k8sobject.
+ *
+ * k8sobject is a fieldable content entity used to hold structured information
+ * without the overhead of using a node content type.
+ *
+ * The k8sobject entity has the main tasks for an entity:
+ * - define
+ * - save
+ * - load
+ * - view
+ * - edit
+ * - delete
+ * - control access
+ *
+ * Where ever possible, we use the amazing tools built into D8 natively.
+ *
+ * @see Drupal\kubernetes\Entity\K8sObject
+ * }
+ */
